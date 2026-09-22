@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morsa Industrial México │ Refacciones, Herramientas y Maquinaria Pesada</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Pro / Free Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        morsa: {
+                            navy: '#0A192F',      /* Deep Industrial Navy */
+                            blue: '#1E3A8A',      /* Rich Blue Accent */
+                            electric: '#FF6B00',  /* Vibrant Electric Orange */
+                            amber: '#F59E0B',     /* Warm Amber */
+                            dark: '#030712'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased selection:bg-morsa-electric selection:text-white">
+
+    <div class="bg-morsa-navy text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-solid fa-truck-fast text-morsa-electric mr-1.5"></i> Envíos especializados a todo México y CEDIS Nacionales</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-shield-halved text-emerald-400 mr-1.5"></i> Distribuidor Certificado Maquinaria Original</span>
+            </div>
+            <div class="flex items-center space-x-4 font-medium">
+                <a href="https://wa.me/525598765432" target="_blank" class="hover:text-white transition flex items-center"><i class="fa-brands fa-whatsapp text-emerald-400 text-base mr-1"></i> Ventas Industriales: (55) 9876-5432</a>
+                <a href="#contacto" class="hover:text-white transition">Sucursales CDMX, MTY & GDL</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-12 h-12 bg-morsa-navy text-white rounded-xl flex items-center justify-center font-black text-2xl shadow-lg group-hover:bg-morsa-electric transition">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+                <div>
+                    <span class="text-2xl font-black text-morsa-navy tracking-tight">MORSA<span class="text-morsa-electric ml-0.5">INDUSTRIAL</span></span>
+                    <span class="block text-[9px] uppercase font-bold tracking-widest text-slate-500">Refacciones & Maquinaria B2B</span>
+                </div>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="hidden md:flex flex-1 max-w-lg mx-8">
+                <div class="relative w-full">
+                    <input type="text" id="search-input" oninput="filterProducts()" placeholder="Buscar motores, bombas hidráulicas, generadores, bandas..." class="w-full bg-slate-100 border border-slate-200 rounded-full py-2.5 pl-4 pr-10 text-sm focus:outline-none focus:bg-white focus:border-morsa-electric transition">
+                    <button class="absolute right-3.5 top-3 text-slate-400 hover:text-morsa-electric">
+                        <i class="fa-solid fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Links & Cart Trigger -->
+            <div class="flex items-center space-x-6">
+                <nav class="hidden lg:flex space-x-6 font-semibold text-sm text-slate-700">
+                    <a href="#inicio" class="text-morsa-electric transition">Inicio</a>
+                    <a href="#categorias" class="hover:text-morsa-electric transition">Categorías</a>
+                    <a href="#catalogo" class="hover:text-morsa-electric transition">Catálogo</a>
+                    <a href="#marcas" class="hover:text-morsa-electric transition">Marcas</a>
+                    <a href="#contacto" class="hover:text-morsa-electric transition">Sucursales</a>
+                </nav>
+
+                <!-- Cart Button -->
+                <button onclick="toggleCart()" class="relative bg-slate-100 hover:bg-morsa-electric hover:text-white p-3 rounded-full transition text-slate-700 shadow-sm">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-morsa-electric text-white text-xs font-black w-5 h-5 rounded-full flex items-center justify-center shadow">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative bg-morsa-dark text-white py-24 lg:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#FF6B00_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-morsa-dark via-morsa-navy/95 to-transparent pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <span class="inline-flex items-center space-x-2 bg-morsa-electric/20 text-morsa-electric border border-morsa-electric/30 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
+                    <i class="fa-solid fa-industry"></i> <span>Socio Tecnológico para la Industria y Manufactura Mexicana</span>
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none">
+                    Maquinaria Pesada, Refacciones y <span class="text-morsa-electric underline decoration-amber-400 decoration-wavy">Sistemas Hidráulicos</span>
+                </h1>
+                <p class="text-slate-300 text-lg max-w-2xl">
+                    Abastecemos plantas industriales, talleres y constructoras con componentes mecánicos y equipos de alta exigencia con certificación internacional de fábrica.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#catalogo" class="bg-morsa-electric hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-orange-600/30 transition flex items-center text-base">
+                        Explorar Catálogo <i class="fa-solid fa-arrow-right ml-2.5"></i>
+                    </a>
+                    <a href="https://wa.me/525598765432" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-7 py-4 rounded-xl transition border border-slate-700 flex items-center text-base">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-xl mr-2.5"></i> Asesoría Técnica WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Highlights Card -->
+            <div class="lg:col-span-5 relative flex justify-center">
+                <div class="w-full max-w-md bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-2xl space-y-6">
+                    <div class="flex items-center space-x-4 pb-4 border-b border-slate-800">
+                        <div class="w-12 h-12 bg-morsa-electric/20 text-morsa-electric rounded-xl flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-white text-lg">Garantía Industrial Morsa</h3>
+                            <p class="text-xs text-slate-400">Facturación fiscal y soporte especializado</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <div class="text-2xl font-black text-morsa-electric">+25,000</div>
+                            <div class="text-xs text-slate-400 mt-1">Refacciones en Stock</div>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                            <div class="text-2xl font-black text-amber-400">Entrega 24/48h</div>
+                            <div class="text-xs text-slate-400 mt-1">Nivel Nacional</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/50 p-4 rounded-xl text-center text-xs text-slate-300">
+                        "Líderes en distribución de partes automotrices e industriales de precisión en México."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="marcas" class="py-12 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">Marcas Líderes Respaldadas por Morsa Industrial</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center">
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center font-black text-slate-700 text-lg hover:border-morsa-electric transition">PARKER</div>
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center font-black text-slate-700 text-lg hover:border-morsa-electric transition">GATES</div>
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center font-black text-slate-700 text-lg hover:border-morsa-electric transition">SKF</div>
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center font-black text-slate-700 text-lg hover:border-morsa-electric transition">SIEMENS</div>
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center font-black text-slate-700 text-lg hover:border-morsa-electric transition">BALDOR</div>
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl text-center font-black text-slate-700 text-lg hover:border-morsa-electric transition">HONDA</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="categorias" class="py-16 bg-slate-100 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-morsa-electric font-bold text-xs uppercase tracking-widest">Departamentos</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Categorías Industriales</h2>
+                </div>
+                <p class="text-sm text-slate-500 mt-2 md:mt-0">Filtre por especialidad técnica para mantenimiento preventivo y correctivo.</p>
+            </div>
+
+            <!-- Category Grid Buttons -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <button onclick="filterCategory('all')" class="cat-btn bg-morsa-navy text-white p-5 rounded-2xl flex flex-col items-center justify-center text-center space-y-3 shadow-md transition hover:scale-105">
+                    <i class="fa-solid fa-border-all text-2xl"></i>
+                    <span class="text-xs font-bold">Ver Todo</span>
+                </button>
+                <button onclick="filterCategory('hidraulica')" class="cat-btn bg-white hover:bg-slate-50 text-slate-800 p-5 rounded-2xl flex flex-col items-center justify-center text-center space-y-3 transition hover:scale-105 border border-slate-200">
+                    <i class="fa-solid fa-droplet text-2xl text-morsa-electric"></i>
+                    <span class="text-xs font-bold">Hidráulica & Neumática</span>
+                </button>
+                <button onclick="filterCategory('motores')" class="cat-btn bg-white hover:bg-slate-50 text-slate-800 p-5 rounded-2xl flex flex-col items-center justify-center text-center space-y-3 transition hover:scale-105 border border-slate-200">
+                    <i class="fa-solid fa-bolt-lightning text-2xl text-morsa-electric"></i>
+                    <span class="text-xs font-bold">Motores & Reductores</span>
+                </button>
+                <button onclick="filterCategory('transmision')" class="cat-btn bg-white hover:bg-slate-50 text-slate-800 p-5 rounded-2xl flex flex-col items-center justify-center text-center space-y-3 transition hover:scale-105 border border-slate-200">
+                    <i class="fa-solid fa-circle-notch text-2xl text-morsa-electric"></i>
+                    <span class="text-xs font-bold">Transmisión de Potencia</span>
+                </button>
+                <button onclick="filterCategory('bombas')" class="cat-btn bg-white hover:bg-slate-50 text-slate-800 p-5 rounded-2xl flex flex-col items-center justify-center text-center space-y-3 transition hover:scale-105 border border-slate-200">
+                    <i class="fa-solid fa-water text-2xl text-morsa-electric"></i>
+                    <span class="text-xs font-bold">Bombas & Fluidos</span>
+                </button>
+                <button onclick="filterCategory('seguridad')" class="cat-btn bg-white hover:bg-slate-50 text-slate-800 p-5 rounded-2xl flex flex-col items-center justify-center text-center space-y-3 transition hover:scale-105 border border-slate-200">
+                    <i class="fa-solid fa-vest text-2xl text-morsa-electric"></i>
+                    <span class="text-xs font-bold">Seguridad Industrial</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogo" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-morsa-electric font-bold text-xs uppercase tracking-widest bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200 shadow-sm">Catálogo Destacado B2B</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Equipos y Refacciones de Alta Rotación</h2>
+                <p class="text-slate-600 mt-2">Seleccione los artículos requeridos para solicitar cotización directa en línea o vía WhatsApp.</p>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group" data-category="hidraulica" data-name="bomba hidraulica de engranes alta presion parker">
+                    <div>
+                        <div class="relative h-52 bg-slate-900 rounded-xl mb-6 overflow-hidden flex items-center justify-center text-white">
+                            <div class="absolute top-3 left-3 bg-morsa-electric text-white font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">Alta Presión</div>
+                            <i class="fa-solid fa-gauge-high text-6xl text-orange-500 group-hover:scale-110 transition duration-300"></i>
+                        </div>
+                        <span class="text-xs font-bold text-morsa-electric uppercase tracking-wider">Hidráulica & Neumática</span>
+                        <h3 class="font-bold text-xl text-slate-900 mt-1">Bomba Hidráulica de Engranes de Alta Presión (Parker)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Diseñada para maquinaria pesada y sistemas hidráulicos industriales continuos.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-slate-900">$4,850.00 <span class="text-xs text-slate-400 font-normal">MXN</span></span>
+                            <span class="block text-[10px] text-emerald-600 font-bold">Stock Disponible CEDIS</span>
+                        </div>
+                        <button onclick="addToCart('Bomba Hidráulica Parker', 4850)" class="bg-morsa-navy hover:bg-morsa-electric text-white text-xs font-bold px-4 py-2.5 rounded-xl transition flex items-center shadow">
+                            <i class="fa-solid fa-cart-plus mr-1.5"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group" data-category="motores" data-name="motor electrico trifasico industrial 15 hp siemens 1800 rpm">
+                    <div>
+                        <div class="relative h-52 bg-slate-900 rounded-xl mb-6 overflow-hidden flex items-center justify-center text-white">
+                            <div class="absolute top-3 left-3 bg-morsa-navy text-white font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">Eficiencia IE3</div>
+                            <i class="fa-solid fa-bolt text-6xl text-amber-400 group-hover:scale-110 transition duration-300"></i>
+                        </div>
+                        <span class="text-xs font-bold text-morsa-electric uppercase tracking-wider">Motores & Reductores</span>
+                        <h3 class="font-bold text-xl text-slate-900 mt-1">Motor Eléctrico Trifásico Industrial 15 HP Siemens (1800 RPM)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Armazón de hierro fundido, protección IP55 para ambientes industriales severos.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-slate-900">$16,900.00 <span class="text-xs text-slate-400 font-normal">MXN</span></span>
+                            <span class="block text-[10px] text-emerald-600 font-bold">Certificación NOM</span>
+                        </div>
+                        <button onclick="addToCart('Motor Trifásico 15 HP Siemens', 16900)" class="bg-morsa-navy hover:bg-morsa-electric text-white text-xs font-bold px-4 py-2.5 rounded-xl transition flex items-center shadow">
+                            <i class="fa-solid fa-cart-plus mr-1.5"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group" data-category="transmision" data-name="banda industrial sincronica de alta resistencia gates powergrip">
+                    <div>
+                        <div class="relative h-52 bg-slate-900 rounded-xl mb-6 overflow-hidden flex items-center justify-center text-white">
+                            <div class="absolute top-3 left-3 bg-blue-600 text-white font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">Uso Rudo</div>
+                            <i class="fa-solid fa-circle-notch text-6xl text-blue-400 group-hover:scale-110 transition duration-300"></i>
+                        </div>
+                        <span class="text-xs font-bold text-morsa-electric uppercase tracking-wider">Transmisión de Potencia</span>
+                        <h3 class="font-bold text-xl text-slate-900 mt-1">Banda Industrial Sincrónica Gates PowerGrip GT3</h3>
+                        <p class="text-xs text-slate-500 mt-1">Mayor capacidad de transmisión de torque con menor nivel de ruido y vibración.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-slate-900">$1,250.00 <span class="text-xs text-slate-400 font-normal">MXN</span></span>
+                            <span class="block text-[10px] text-emerald-600 font-bold">Precio Mayoreo Pack</span>
+                        </div>
+                        <button onclick="addToCart('Banda Gates PowerGrip', 1250)" class="bg-morsa-navy hover:bg-morsa-electric text-white text-xs font-bold px-4 py-2.5 rounded-xl transition flex items-center shadow">
+                            <i class="fa-solid fa-cart-plus mr-1.5"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group" data-category="bombas" data-name="motobomba centrifuga autocebante 3 hp motor honda">
+                    <div>
+                        <div class="relative h-52 bg-slate-900 rounded-xl mb-6 overflow-hidden flex items-center justify-center text-white">
+                            <div class="absolute top-3 left-3 bg-morsa-electric text-white font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">Autobomba</div>
+                            <i class="fa-solid fa-water text-6xl text-cyan-400 group-hover:scale-110 transition duration-300"></i>
+                        </div>
+                        <span class="text-xs font-bold text-morsa-electric uppercase tracking-wider">Bombas & Fluidos</span>
+                        <h3 class="font-bold text-xl text-slate-900 mt-1">Motobomba Centrífuga Autocebante 3 HP con Motor Honda</h3>
+                        <p class="text-xs text-slate-500 mt-1">Alto caudal para trasvase de líquidos en obras, agricultura e industria ligera.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-slate-900">$8,450.00 <span class="text-xs text-slate-400 font-normal">MXN</span></span>
+                            <span class="block text-[10px] text-emerald-600 font-bold">Garantía Directa</span>
+                        </div>
+                        <button onclick="addToCart('Motobomba Centrifuga Honda 3HP', 8450)" class="bg-morsa-navy hover:bg-morsa-electric text-white text-xs font-bold px-4 py-2.5 rounded-xl transition flex items-center shadow">
+                            <i class="fa-solid fa-cart-plus mr-1.5"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group" data-category="seguridad" data-name="kit arnes de seguridad contra caidas y linea de vida 4 piezas">
+                    <div>
+                        <div class="relative h-52 bg-slate-900 rounded-xl mb-6 overflow-hidden flex items-center justify-center text-white">
+                            <div class="absolute top-3 left-3 bg-emerald-600 text-white font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">Certificado</div>
+                            <i class="fa-solid fa-vest text-6xl text-emerald-400 group-hover:scale-110 transition duration-300"></i>
+                        </div>
+                        <span class="text-xs font-bold text-morsa-electric uppercase tracking-wider">Seguridad Industrial</span>
+                        <h3 class="font-bold text-xl text-slate-900 mt-1">Kit Arnés de Seguridad Contra Caídas y Línea de Vida (4 Pzas)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Cumplimiento estricto con normatividad STPS y OSHA para trabajos en alturas.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-slate-900">$2,190.00 <span class="text-xs text-slate-400 font-normal">MXN</span></span>
+                            <span class="block text-[10px] text-emerald-600 font-bold">Pack Especial Obra</span>
+                        </div>
+                        <button onclick="addToCart('Kit Arnés de Seguridad 4 Pzas', 2190)" class="bg-morsa-navy hover:bg-morsa-electric text-white text-xs font-bold px-4 py-2.5 rounded-xl transition flex items-center shadow">
+                            <i class="fa-solid fa-cart-plus mr-1.5"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition border border-slate-200 flex flex-col justify-between group" data-category="transmision" data-name="rodamiento de bolas con soporte skf alta velocidad">
+                    <div>
+                        <div class="relative h-52 bg-slate-900 rounded-xl mb-6 overflow-hidden flex items-center justify-center text-white">
+                            <div class="absolute top-3 left-3 bg-morsa-electric text-white font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">Alta Precisión</div>
+                            <i class="fa-solid fa-circle text-6xl text-amber-400 group-hover:scale-110 transition duration-300"></i>
+                        </div>
+                        <span class="text-xs font-bold text-morsa-electric uppercase tracking-wider">Transmisión de Potencia</span>
+                        <h3 class="font-bold text-xl text-slate-900 mt-1">Rodamiento de Bolas con Soporte SKF de Alta Velocidad</h3>
+                        <p class="text-xs text-slate-500 mt-1">Sellado superior contra contaminantes y lubricación de larga duración.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-slate-900">$890.00 <span class="text-xs text-slate-400 font-normal">MXN</span></span>
+                            <span class="block text-[10px] text-emerald-600 font-bold">Disponible en Cajas</span>
+                        </div>
+                        <button onclick="addToCart('Rodamiento con Soporte SKF', 890)" class="bg-morsa-navy hover:bg-morsa-electric text-white text-xs font-bold px-4 py-2.5 rounded-xl transition flex items-center shadow">
+                            <i class="fa-solid fa-cart-plus mr-1.5"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-morsa-navy text-white p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between space-y-6">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-morsa-electric/20 rounded-full blur-2xl"></div>
+                <div class="space-y-3 relative z-10">
+                    <span class="text-amber-400 font-bold text-xs uppercase tracking-widest"><i class="fa-solid fa-id-card mr-1"></i> Crédito Industrial Morsa B2B</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold">Financiamiento para Tu Planta o Negocio</h3>
+                    <p class="text-slate-300 text-sm">Obtén plazos preferenciales de 30, 60 y 90 días para el mantenimiento y abastecimiento de maquinaria con facturación electrónica 4.0 inmediata.</p>
+                </div>
+                <a href="https://wa.me/525598765432?text=Hola,%20solicito%20información%20sobre%20línea%20de%20crédito%20industrial%20Morsa." target="_blank" class="inline-flex items-center justify-center bg-morsa-electric hover:bg-orange-600 text-white font-bold py-3.5 px-6 rounded-xl transition relative z-10 shadow">
+                    Solicitar Crédito B2B <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="bg-white border border-slate-200 p-8 rounded-3xl flex flex-col justify-between space-y-6">
+                <div class="space-y-3">
+                    <span class="text-morsa-electric font-bold text-xs uppercase tracking-widest"><i class="fa-solid fa-truck-ramp-box mr-1"></i> Logística Especializada</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Envíos Seguros a Todo México</h3>
+                    <p class="text-slate-600 text-sm">Contamos con unidades especializadas para el traslado seguro de equipos pesados, motores de gran tonelaje y refacciones delicadas en los 32 estados.</p>
+                </div>
+                <a href="#contacto" class="inline-flex items-center justify-center bg-morsa-navy hover:bg-slate-800 text-white font-bold py-3.5 px-6 rounded-xl transition shadow">
+                    Consultar Cobertura Logística <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-morsa-electric font-bold text-xs uppercase tracking-widest bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200">Testimonios Industriales</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Lo que Opinan Nuestros Ingenieros y Socios</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl space-y-4">
+                    <div class="text-amber-400 flex space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm italic">"La disponibilidad de refacciones Parker y bombas hidráulicas en Morsa nos ha evitado paros de línea prolongados en nuestra planta del Bajío."</p>
+                    <div class="font-bold text-slate-900 text-sm">Ing. Fernando Beltrán <span class="block text-xs font-normal text-slate-500">Manufactura Avanzada Querétaro</span></div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl space-y-4">
+                    <div class="text-amber-400 flex space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm italic">"Excelente soporte técnico telefónico y por WhatsApp. Sus asesores identifican exactamente la refacción que necesitamos sin errores."</p>
+                    <div class="font-bold text-slate-900 text-sm">Ing. Patricia Salinas <span class="block text-xs font-normal text-slate-500">Constructora e Industrial MTY</span></div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl space-y-4">
+                    <div class="text-amber-400 flex space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm italic">"Surtimos todos nuestros motores Siemens y bandas Gates con Morsa desde hace más de 6 años. Precios competitivos y seriedad absoluta."</p>
+                    <div class="font-bold text-slate-900 text-sm">Lic. Guillermo Rivas <span class="block text-xs font-normal text-slate-500">Sistemas Mecánicos del Valle de México</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-morsa-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-morsa-electric font-bold text-xs uppercase tracking-widest bg-orange-600/10 px-3 py-1 rounded-full border border-orange-600/20">Centros de Distribución</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Sucursales y CEDIS México</h2>
+                <p class="text-slate-400 mt-2">Visítenos o contáctenos por nuestros canales oficiales de atención industrial.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Branch 1 -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl text-center space-y-4">
+                    <div class="w-14 h-14 bg-morsa-electric/20 text-morsa-electric mx-auto rounded-2xl flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-white">CEDIS CDMX Central</h3>
+                    <p class="text-slate-400 text-sm">Calzada Vallejo #1200, Col. Industrial Vallejo, Azcapotzalco, C.P. 02300, CDMX.</p>
+                </div>
+                <!-- Branch 2 -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl text-center space-y-4">
+                    <div class="w-14 h-14 bg-morsa-electric/20 text-morsa-electric mx-auto rounded-2xl flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-white">Línea Directa Industrial</h3>
+                    <p class="text-slate-400 text-sm">Ventas Corporativas: (55) 9876-5432<br>Atención Nacional: 800 667 7272</p>
+                </div>
+                <!-- Branch 3 -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl text-center space-y-4">
+                    <div class="w-14 h-14 bg-morsa-electric/20 text-morsa-electric mx-auto rounded-2xl flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-white">Horarios de Atención</h3>
+                    <p class="text-slate-400 text-sm">Lunes - Viernes: 8:00 AM - 7:00 PM<br>Sábados: 9:00 AM - 2:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-morsa-electric text-white rounded-lg flex items-center justify-center font-black text-lg">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <span class="text-lg font-black text-white tracking-tight">MORSA<span class="text-morsa-electric">INDUSTRIAL</span></span>
+                </div>
+                <p class="leading-relaxed">
+                    Distribuidor líder de refacciones hidráulicas, motores y maquinaria pesada para la industria en la República Mexicana.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4">Enlaces Rápidos</h4>
+                <ul class="space-y-2">
+                    <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+                    <li><a href="#categorias" class="hover:text-white transition">Departamentos</a></li>
+                    <li><a href="#catalogo" class="hover:text-white transition">Catálogo Industrial</a></li>
+                    <li><a href="#marcas" class="hover:text-white transition">Marcas Autorizadas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4">Especialidades B2B</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-slate-400">Hidráulica y Neumática</span></li>
+                    <li><span class="text-slate-400">Motores Eléctricos</span></li>
+                    <li><span class="text-slate-400">Transmisión de Potencia</span></li>
+                    <li><span class="text-slate-400">Bombas y Fluidos</span></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-sm mb-4">Boletín Técnico</h4>
+                <p class="mb-3">Reciba fichas técnicas actualizadas y boletines de ingeniería cada mes.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Correo corporativo" class="bg-slate-900 border border-slate-800 rounded-l-lg px-3 py-2 text-white focus:outline-none w-full">
+                    <button class="bg-morsa-electric hover:bg-orange-600 text-white px-4 rounded-r-lg font-bold"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-900 pt-6 text-center text-slate-500">
+            © 2026 Morsa Industrial S.A. de C.V. Todos los derechos reservados. Ciudad de México.
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden flex justify-end">
+        <div class="w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between p-6">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center">
+                    <i class="fa-solid fa-cart-shopping text-morsa-electric mr-2"></i> Cotización / Carrito Industrial
+                </h3>
+                <button onclick="toggleCart()" class="text-slate-400 hover:text-slate-700 text-xl p-2">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Cart Items Container -->
+            <div id="cart-items" class="flex-1 overflow-y-auto py-4 space-y-4">
+                <p class="text-slate-400 text-center py-12">Su carrito industrial está vacío.</p>
+            </div>
+
+            <!-- Cart Footer -->
+            <div class="pt-4 border-t border-slate-200 space-y-4">
+                <div class="flex justify-between items-center text-base font-bold text-slate-900">
+                    <span>Total Estimado:</span>
+                    <span id="cart-total">$0.00 MXN</span>
+                </div>
+                <button onclick="checkoutCart()" class="w-full bg-morsa-electric hover:bg-orange-600 text-white font-bold py-3.5 rounded-xl transition shadow">
+                    Enviar Cotización por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartUI();
+            toggleCart();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+
+            let totalItems = 0;
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-slate-400 text-center py-12">Su carrito industrial está vacío.</p>';
+            } else {
+                cartItemsContainer.innerHTML = '';
+                cart.forEach((item, index) => {
+                    totalItems += item.qty;
+                    totalPrice += item.price * item.qty;
+                    cartItemsContainer.innerHTML += `
+                        <div class="flex justify-between items-center bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
+                            <div>
+                                <div class="font-bold text-slate-900">${item.name}</div>
+                                <div class="text-xs text-slate-500">$${item.price.toLocaleString('es-MX', {minimumFractionDigits: 2})} MXN x ${item.qty}</div>
+                            </div>
+                            <button onclick="removeItem(${index})" class="text-red-500 hover:text-red-700 p-2">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                    `;
+                });
+            }
+
+            cartCount.innerText = totalItems;
+            cartTotal.innerText = '$' + totalPrice.toLocaleString('es-MX', {minimumFractionDigits: 2}) + ' MXN';
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function checkoutCart() {
+            if (cart.length === 0) {
+                // Custom non-blocking notification instead of alert()
+                const cartItemsContainer = document.getElementById('cart-items');
+                const warningDiv = document.createElement('div');
+                warningDiv.className = 'bg-amber-100 text-amber-800 p-3 rounded-xl text-xs text-center font-bold mb-2 animate-pulse';
+                warningDiv.innerText = 'Por favor agregue productos a su cotización primero.';
+                cartItemsContainer.prepend(warningDiv);
+                setTimeout(() => warningDiv.remove(), 3000);
+                return;
+            }
+            let message = 'Hola Morsa Industrial, me gustaría solicitar la cotización formal de los siguientes equipos y refacciones:\n\n';
+            let total = 0;
+            cart.forEach(item => {
+                message += `- ${item.qty}x ${item.name} ($${(item.price * item.qty).toLocaleString('es-MX', {minimumFractionDigits: 2})} MXN)\n`;
+                total += item.price * item.qty;
+            });
+            message += `\nTotal estimado: $${total.toLocaleString('es-MX', {minimumFractionDigits: 2})} MXN`;
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/525598765432?text=${encoded}`, '_blank');
+        }
+
+        function filterCategory(cat) {
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-morsa-navy', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-800');
+            });
+            event.currentTarget.classList.remove('bg-white', 'text-slate-800');
+            event.currentTarget.classList.add('bg-morsa-navy', 'text-white');
+
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name');
+                if (name.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
